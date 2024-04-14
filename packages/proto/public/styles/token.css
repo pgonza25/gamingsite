@@ -1,0 +1,8 @@
+:root {
+    --color-background-page: RGB(235, 235, 235);
+    --color-background-header: RGB(43, 98, 197);
+
+    --size-type-body: 1rem;
+    --size-type-h1: 2.5rem;
+    --size-type-h2: 2rem;
+}
