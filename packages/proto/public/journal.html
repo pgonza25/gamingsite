@@ -8,53 +8,61 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/reset.css">
     <link rel="stylesheet" href="/styles/token.css">
-    <link rel="stylesheet" href="/styles/journal.css">
     <link rel="stylesheet" href="/styles/page.css">
+    <link rel="stylesheet" href="/styles/content.css">
+    <link rel="stylesheet" href="/styles/journal.css">
     <title>My Journal</title>
 </head>
 <body>
     <header>
         <h1><a href="index.html">Joystick Journal</a></h1>
     </header>
-    <div class="left">
-        <p>My Lists</p>
-        <p>All &#40;3&#41;</p>
-        <p>Played &#40;3&#41;</p>
-        <p>Currently Playing &#40;3&#41;</p>
-        <p>Backlog &#40;0&#41;</p>
+    <div class="content">
+        <div class="left">
+            <h3>My Lists</h3>
+            <p>All &#40;3&#41;</p>
+            <p>Played &#40;3&#41;</p>
+            <p>Currently Playing &#40;3&#41;</p>
+            <p>Backlog &#40;0&#41;</p>
+        </div>
+        <div class="gamelist">
+            <p>View the games you've added to your played list, your currently playing list, or your backlog.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cover</th>
+                        <th>Title</th>
+                        <th>Platform</th>
+                        <th>Rating</th>
+                        <th>Date Added</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://image.api.playstation.com/vulcan/ap/rnd/202109/1321/yZ7dpmjtHr1olhutHT57IFRh.png" alt="Gran Turismo 7"></td>
+                        <td><a href="game.html">Gran Turismo 7</a></td>
+                        <td>PS5</td>
+                        <td>8</td>
+                        <td>Apr 11, 2024</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/60eca3ac155247e21850c7d075d01ebf0f3f5dbf19ccd2a1.jpg" alt="Spider-Man 2"></td>
+                        <td>Spider-Man 2</td>
+                        <td>PS5</td>
+                        <td>9</td>
+                        <td>Apr 11, 2024</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://image.api.playstation.com/vulcan/ap/rnd/202312/0117/315718bce7eed62e3cf3fb02d61b81ff1782d6b6cf850fa4.png" alt="The Last of Us Part II Remastered"></td>
+                        <td>The Last of Us Part II Remastered</td>
+                        <td>PS5</td>
+                        <td>10</td>
+                        <td>Apr 11, 2024</td>
+                    </tr>   
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div class="right">
-        <p>View the games you've added to your played list, your currently playing list, or your backlog.</p>
-        <table>
-            <tr>
-                <th>Cover</th>
-                <th>Title</th>
-                <th>Platform</th>
-                <th>Rating</th>
-                <th>Date Added</th>
-            </tr>
-            <tr>
-                <td><img src="https://image.api.playstation.com/vulcan/ap/rnd/202109/1321/yZ7dpmjtHr1olhutHT57IFRh.png" alt="Gran Turismo 7"></td>
-                <td><a href="game.html">Gran Turismo 7</a></td>
-                <td>PS5</td>
-                <td>8</td>
-                <td>Feb 21, 2024</td>
-            </tr>
-            <tr>
-                <td><img src="https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/60eca3ac155247e21850c7d075d01ebf0f3f5dbf19ccd2a1.jpg" alt="Spider-Man 2"></td>
-                <td>Spider-Man 2</td>
-                <td>PS5</td>
-                <td>9</td>
-                <td>Feb 21, 2024</td>
-            </tr>
-            <tr>
-                <td><img src="https://image.api.playstation.com/vulcan/ap/rnd/202312/0117/315718bce7eed62e3cf3fb02d61b81ff1782d6b6cf850fa4.png" alt="The Last of Us Part II Remastered"></td>
-                <td>The Last of Us Part II Remastered</td>
-                <td>PS5</td>
-                <td>10</td>
-                <td>Feb 21, 2024</td>
-            </tr>            
-        </table>
-    </div>
+
 </body>
 </html>

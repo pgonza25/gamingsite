@@ -3,7 +3,43 @@
 }
 
 header {
+    padding: var(--size-spacing-medium);
     background-color: var(--color-background-header);
+}
+
+header h1, header a{
+    width: fit-content;
+}
+
+header a {
+    text-decoration: none;
+    color: var(--color-link-header);
+    background-color: var(--color-background-header);
+}
+
+header a:visited {
+    text-decoration: none;
+}
+
+header a:hover {
+    cursor: pointer;
+}
+
+.content {
+    padding: var(--size-spacing-large);
+}
+
+.content h3 {
+    padding: var(--size-spacing-medium);
+}
+
+.content ul {
+    padding-bottom: var(--size-spacing-medium);
+}
+
+.content a {
+    color: var(--color-link-body);
+    text-decoration: none;
 }
 
 h1, h2, h3 {

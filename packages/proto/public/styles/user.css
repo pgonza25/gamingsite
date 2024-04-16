@@ -1,0 +1,14 @@
+.user {
+    text-align: center;
+}
+
+h2 {
+    width: max-content;
+
+}
+
+.avatar {
+    max-width: 25%;
+    display: inline;
+}
+

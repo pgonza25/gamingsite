@@ -3,3 +3,30 @@ img {
     max-height: auto;
 }
 
+.gamelist {
+    padding: var(--size-spacing-medium);
+}
+
+table {
+    width: 40rem;
+}
+
+th {
+    text-align: left;
+}
+
+tr:nth-child(1) {
+    max-width: fit-content;
+}
+
+tr:nth-child(2) {
+    padding: var(--size-spacing-medium);
+}
+
+tr:nth-child(3) {
+    padding: var(--size-spacing-medium);
+}
+
+tr:nth-child(4) {
+    padding: var(--size-spacing-medium);
+}

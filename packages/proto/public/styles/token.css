@@ -1,6 +1,13 @@
 :root {
     --color-background-page: RGB(235, 235, 235);
-    --color-background-header: RGB(43, 98, 197);
+    --color-background-header: RGB(33, 82, 127);
+    --color-link-header: RGB(172, 147, 70);
+    --color-link-body: RGB(99, 173, 123);
+
+    --size-spacing-small: 0.25rem;
+    --size-spacing-medium: 0.5rem;
+    --size-spacing-large: 1rem;
+    --size-spacing-xlarge: 2rem;
 
     --size-type-body: 1rem;
     --size-type-h1: 2.5rem;
