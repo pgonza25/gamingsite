@@ -1,5 +1,12 @@
+.content {
+    justify-content: space-evenly;
+}
+
 .user {
-    text-align: center;
+    display: flex;
+    flex-basis: max-content;
+    flex-direction: column;
+    align-items: center;
 }
 
 h2 {
@@ -8,7 +15,6 @@ h2 {
 }
 
 .avatar {
-    max-width: 25%;
-    display: inline;
+    width: 150px;
 }
 
