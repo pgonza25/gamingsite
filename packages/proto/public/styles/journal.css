@@ -1,6 +1,5 @@
 img {
-    max-width: 15%;
-    max-height: auto;
+    object-fit: contain;
 }
 
 .gamelist {
@@ -8,7 +7,31 @@ img {
 }
 
 table {
-    width: 40rem;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid black;
+    padding: var(--size-spacing-medium);
+}
+
+thead th:nth-child(1) {
+    width: 30%;
+}
+
+thead th:nth-child(2) {
+    width: 15%;
+}
+
+thead th:nth-child(3) {
+    width: 10%;
+}
+
+thead th:nth-child(4) {
+    width: 10%;
+}
+
+thead th:nth-child(5) {
+    width: 15%;
 }
 
 th {

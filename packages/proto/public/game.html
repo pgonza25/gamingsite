@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="/styles/page.css">
     <link rel="stylesheet" href="/styles/game.css">
     <link rel="stylesheet" href="/styles/content.css">
+    <script type="module">
+        import  "/js/html-loader.js";
+        import { relayEvent } from "/js/relay-event.js";
+
+        //window.loadHTML = loadHTML;
+        window.relayEvent = relayEvent;
+    </script>
     <title>Joystick Journal - Gran Turismo 7</title>
 </head>
 <body>
@@ -37,7 +44,10 @@
         <div class="right">
             <img src="https://image.api.playstation.com/vulcan/ap/rnd/202109/1321/yZ7dpmjtHr1olhutHT57IFRh.png" alt="Gran Turismo 7">
             <button type="button">Played</button>
-            <p><a href="review.html">Write a review</a></p>
+            <summary>Leave a review for Gran Turismo 7</summary>
+            <html-fragment href="review.html">
+                <a href="#" onclick="relayEvent(event, 'html-fragment:open')">Leave a Review</a>
+            </html-fragment>
         </div>
     </div>
 

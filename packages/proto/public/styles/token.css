@@ -3,6 +3,7 @@
     --color-background-header: RGB(33, 82, 127);
     --color-link-header: RGB(172, 147, 70);
     --color-link-body: RGB(99, 173, 123);
+    --color-text-body: black;
 
     --size-spacing-small: 0.25rem;
     --size-spacing-medium: 0.5rem;
@@ -23,4 +24,12 @@
     --font-weight-normal: 400;
     --font-weight-light: 200;
     --font-weight-bold: 700;
+}
+
+body.dark-mode {
+    --color-background-page: RGB(33, 82, 127);
+    --color-background-header: RGB(235, 235, 235);
+    --color-link-header: RGB(99, 173, 123);
+    --color-link-body: RGB(172, 147, 70);
+    --color-text-body: rgb(163, 178, 197);
 }

@@ -10,11 +10,47 @@
     <link rel="stylesheet" href="/styles/token.css">
     <link rel="stylesheet" href="/styles/page.css">
     <link rel="stylesheet" href="styles/index.css">
+    <script type="module" src="/js/drop-down.js"></script>
+    <script type="module">
+        import { loadHTML } from "/js/html-loader.js";
+        import { relayEvent } from "/js/relay-event.js";
+
+        window.loadHTML = loadHTML;
+        window.relayEvent = relayEvent;
+    </script>
+    <script type="module">
+        function toggleDarkMode(page, checked) {
+            page.classList.toggle("dark-mode", checked);
+        }
+
+        document.body.addEventListener("dark-mode", (event) =>
+            toggleDarkMode(
+                event.currentTarget,
+                event.detail.checked
+            )
+        );
+    </script>
     <title>CSC 437</title>
 </head>
 <body>
     <header>
         <h1><a href="index.html">Joystick Journal</a></h1>
+        <label
+            onchange="relayEvent(
+                event,
+                'dark-mode',
+                {checked: event.target.checked})">
+            <input type="checkbox" autocomplete="off" /> Dark Mode
+        </label>
+        <drop-down>
+            <label
+                onchange="relayEvent(
+                    event,
+                    'dark-mode',
+                    {checked: event.target.checked})">
+                    <input type="checkbox" autocomplete="off" />Dark Mode
+            </label>
+        </drop-down>
     </header>
     <div class="content home">
         <h2>Welcome to Joystick Journal!</h2>
@@ -27,6 +63,8 @@
             <li>Leave a "like" on your favorite games</li>
             <li>Rate games to share your opinion on them</li>
         </ul>
+
+
         <a href="journal.html">View Your Journal</a>
         <a href="user.html">View Your Profile</a>
     </div>
