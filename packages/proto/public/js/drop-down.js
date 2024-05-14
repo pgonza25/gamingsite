@@ -45,4 +45,4 @@ export class DropdownMenu extends HTMLElement {
     }
 }
 
-customElements.define("drop-down", Dropdown);
+customElements.define("drop-down", DropdownMenu);

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/token.css">
+    <link rel="stylesheet" href="/styles/page.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <script type="module" src="/js/drop-down.js"></script>
+    <script type="module" src="/js/json-loader.js"></script>
+    <script type="module" src="/js/restful-form.js"></script>
+    <script type="module" src="/js/input-array.js"></script>
+    <script type="module" src="/js/profile-view.js"></script>
+    <script type="module">
+        import { loadHTML } from "/js/html-loader.js";
+        import { relayEvent } from "/js/relay-event.js";
+
+        window.loadHTML = loadHTML;
+        window.relayEvent = relayEvent;
+    </script>
+    <script type="module">
+        function toggleDarkMode(page, checked) {
+            page.classList.toggle("dark-mode", checked);
+        }
+
+        document.body.addEventListener("dark-mode", (event) =>
+            toggleDarkMode(
+                event.currentTarget,
+                event.detail.checked
+            )
+        );
+    </script>
+    <title>CSC 437</title>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">Joystick Journal</a></h1>
+        <label
+            onchange="relayEvent(
+                event,
+                'dark-mode',
+                {checked: event.target.checked})">
+            <input type="checkbox" autocomplete="off" /> Dark Mode
+        </label>
+        <drop-down>
+            <label
+                onchange="relayEvent(
+                    event,
+                    'dark-mode',
+                    {checked: event.target.checked})">
+                    <input type="checkbox" autocomplete="off" />Dark Mode
+            </label>
+        </drop-down>
+    </header>
+    <main>
+        <json-object src="/api/profiles/pablo">
+            <a href="#" onclick="relayEvent(event, 'json-object:open')">
+                Pablo Gonzalez
+            </a>
+        </json-object>
+        <restful-form src="/api/profiles/pablo">
+            <label>
+                <span>Username</span>
+                <input name="id" disabled />
+            </label>
+            <label>
+                <span>Name</span>
+                <input name="name" />
+            </label>
+            <label>
+                <span>Avatar</span>
+                <input name="avatar" />
+            </label>
+            <label>
+                <span>Favorite Games</span>
+                <input-array name="favorites">
+                    <span slot="label-add">Add a Game</span>
+                </input-array>
+            </label>
+        </restful-form>
+        <profile-view>
+            <span slot="id">pablo</span>
+            <span slot="name">Pablo Gonzalez</span>
+            <ul slot="favorites">
+                <li>God of War Ragnarok</li>
+                <li>The Last of Us Part 2</li>
+                <li>Metal Gear Solid: Peace Walker</li>
+            </ul>
+        </profile-view>
+    </main>
+</body>
+</html>
