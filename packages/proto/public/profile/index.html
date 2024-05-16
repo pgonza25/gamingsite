@@ -14,6 +14,18 @@
     <script type="module" src="/js/json-loader.js"></script>
     <script type="module" src="/js/restful-form.js"></script>
     <script type="module" src="/js/input-array.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "@calpoly/mustang": "/node_modules/@calpoly/mustang/dist/mustang.mjs"
+            }
+        }
+    </script>
+    <script type="module">
+        import { define, Auth } from "@calpoly/mustang";
+
+        define({ "mu-auth": Auth.Provider });
+    </script>
     <script type="module" src="/js/profile-view.js"></script>
     <script type="module">
         import { loadHTML } from "/js/html-loader.js";
@@ -56,41 +68,10 @@
             </label>
         </drop-down>
     </header>
-    <main>
-        <json-object src="/api/profiles/pablo">
-            <a href="#" onclick="relayEvent(event, 'json-object:open')">
-                Pablo Gonzalez
-            </a>
-        </json-object>
-        <restful-form src="/api/profiles/pablo">
-            <label>
-                <span>Username</span>
-                <input name="id" disabled />
-            </label>
-            <label>
-                <span>Name</span>
-                <input name="name" />
-            </label>
-            <label>
-                <span>Avatar</span>
-                <input name="avatar" />
-            </label>
-            <label>
-                <span>Favorite Games</span>
-                <input-array name="favorites">
-                    <span slot="label-add">Add a Game</span>
-                </input-array>
-            </label>
-        </restful-form>
-        <profile-view>
-            <span slot="id">pablo</span>
-            <span slot="name">Pablo Gonzalez</span>
-            <ul slot="favorites">
-                <li>God of War Ragnarok</li>
-                <li>The Last of Us Part 2</li>
-                <li>Metal Gear Solid: Peace Walker</li>
-            </ul>
-        </profile-view>
-    </main>
+    <mu-auth provides="joystick:auth" redirect="../login.html">
+        <main>
+            <profile-view src="/api/profiles/pablo"></profile-view>
+        </main>
+    </mu-auth>
 </body>
 </html>

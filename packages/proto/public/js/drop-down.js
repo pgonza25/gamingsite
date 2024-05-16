@@ -35,7 +35,7 @@ export class DropdownMenu extends HTMLElement {
         this.attachShadow({mode: "open" }).appendChild(
             DropdownMenu.template.cloneNode(true)
         );
-        this.shadowRoot.querySelector("slot[name='trigger']")
+        this.shadowRoot.querySelector("slot[name='actuator']")
             .addEventListener("click", () => this.toggle());
     }
 
