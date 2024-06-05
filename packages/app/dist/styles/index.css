@@ -1,0 +1,16 @@
+.content.home {
+    display: grid;
+    align-items: center;
+}
+
+h2, p {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+ul {
+    max-width: 50%;
+}

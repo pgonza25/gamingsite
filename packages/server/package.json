@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
+  "exports": {
+    "./models": {
+      "import": "./src/models/index.ts"
+    }
+  },
   "scripts": {
+    "start:app": "cross-env STATIC=../app/dist npm run start",
+    "start:proto": "cross-env STATIC=../proto/public npm run start",
     "dev": "cross-env STATIC=../proto/public npx nodemon",
     "build": "npx etsc",
     "start": "cross-env STATIC=../proto/public node dist/index.js",

@@ -1,12 +1,14 @@
 import { Schema, Model, Document, model } from "mongoose";
 import { Profile } from "../models/profile";
+import { Game } from "../models/game";
 
 const ProfileSchema = new Schema<Profile>(
     {
         id: { type: String, required: true, trim: true },
         name: { type: String, required: true, trim: true },
         avatar: String,
-        favorites: [String]
+        games: Array<Game>,
+        friends: Array<String>
     },
     { collection: "user-profiles" }
 );
@@ -50,22 +52,3 @@ function update(userid: String, profile: Profile): Promise<Profile> {
 }
 
 export default { index, get, create, update };
-
-let profiles: Array<Profile> = [
-    {
-        id: "pablo",
-        name: "Pablo Gonzalez",
-        avatar: "/data/avatars/avatar.jpeg",
-        favorites: ["God of War Ragnarok", "The Last of Us Part 2", "Metal Gear Solid: Peace Walker"]
-    }, {
-        id: "bryson",
-        name: "Bryson",
-        avatar: "dummyimgdata",
-        favorites: ["Ghost of Tsushima", "Gran Turismo 7", "Super Mario Wonder"]
-    }, {
-        id: "danako",
-        name: "Danako",
-        avatar: "moredummydata",
-        favorites: ["Uncharted 4", "Helldivers 2", "Spider-Man 2"]
-    }
-];

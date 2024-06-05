@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import profiles from "./routes/profiles";
+import games from "./routes/games";
 import { connect } from "./services/mongo";
 import auth, { authenticateUser } from "./routes/auth";
 import exp from "constants";
@@ -23,6 +24,7 @@ app.use("/node_modules", express.static(nodeModules));
 
 app.use(express.json());
 app.use("/api/profiles", authenticateUser, profiles);
+app.use("/api/games", games);
 app.use("/auth", auth);
 
 app.get("/hello", (req: Request, res: Response) => {

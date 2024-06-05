@@ -1,0 +1,55 @@
+img {
+    object-fit: contain;
+}
+
+.gamelist {
+    padding: var(--size-spacing-medium);
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid black;
+    padding: var(--size-spacing-medium);
+}
+
+thead th:nth-child(1) {
+    width: 30%;
+}
+
+thead th:nth-child(2) {
+    width: 15%;
+}
+
+thead th:nth-child(3) {
+    width: 10%;
+}
+
+thead th:nth-child(4) {
+    width: 10%;
+}
+
+thead th:nth-child(5) {
+    width: 15%;
+}
+
+th {
+    text-align: left;
+}
+
+tr:nth-child(1) {
+    max-width: fit-content;
+}
+
+tr:nth-child(2) {
+    padding: var(--size-spacing-medium);
+}
+
+tr:nth-child(3) {
+    padding: var(--size-spacing-medium);
+}
+
+tr:nth-child(4) {
+    padding: var(--size-spacing-medium);
+}

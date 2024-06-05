@@ -1,0 +1,20 @@
+.content {
+    justify-content: space-evenly;
+}
+
+.user {
+    display: flex;
+    flex-basis: max-content;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    width: max-content;
+
+}
+
+.avatar {
+    width: 150px;
+}
+

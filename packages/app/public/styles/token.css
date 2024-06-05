@@ -1,0 +1,35 @@
+:root {
+    --color-background-page: RGB(235, 235, 235);
+    --color-background-header: RGB(33, 82, 127);
+    --color-link-header: RGB(172, 147, 70);
+    --color-link-body: RGB(99, 173, 123);
+    --color-text-body: black;
+
+    --size-spacing-small: 0.25rem;
+    --size-spacing-medium: 0.5rem;
+    --size-spacing-large: 1rem;
+    --size-spacing-xlarge: 2rem;
+
+    --size-type-body: 1rem;
+    --size-type-h1: 2.5rem;
+    --size-type-h2: 2rem;
+    --size-type-h3: 1.5rem;
+
+    --font-family-display: "Roboto Serif", Georgia, Baskerville, "Times New Roman", serif;
+    --font-family-body: Roboto, Arial, Helvetica, Verdana, Tahoma, sans-serif;
+
+    --font-line-height-display: 1.125;
+    --font-line-height-body: 1.5;
+
+    --font-weight-normal: 400;
+    --font-weight-light: 200;
+    --font-weight-bold: 700;
+}
+
+body.dark-mode {
+    --color-background-page: RGB(33, 82, 127);
+    --color-background-header: RGB(235, 235, 235);
+    --color-link-header: RGB(99, 173, 123);
+    --color-link-body: RGB(172, 147, 70);
+    --color-text-body: rgb(163, 178, 197);
+}

@@ -150,8 +150,8 @@ export class ProfileViewElement extends HTMLElement {
                         <input name="avatar" />
                     </label>
                     <label>
-                        <span>Favorite Games</span>
-                        <input-array name="favorites">
+                        <span>My Games</span>
+                        <input-array name="games">
                             <span slot="label-add">Add a Game</span>
                         </input-array>
                     </label>
@@ -162,7 +162,7 @@ export class ProfileViewElement extends HTMLElement {
                     <dt>Name</dt>
                     <dd><slot name="name"></slot></dd>
                     <dt>Favorite Games</dt>
-                    <dd><slot name="favorites"></slot></dd>
+                    <dd><slot name="games"></slot></dd>
                 </dl>
         </section>
         <style>${ProfileViewElement.styles}</style>

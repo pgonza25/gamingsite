@@ -27,7 +27,8 @@ const ProfileSchema = new import_mongoose.Schema(
     id: { type: String, required: true, trim: true },
     name: { type: String, required: true, trim: true },
     avatar: String,
-    favorites: [String]
+    games: Array,
+    friends: Array
   },
   { collection: "user-profiles" }
 );
@@ -64,23 +65,3 @@ function update(userid, profile) {
   });
 }
 var profile_svc_default = { index, get, create, update };
-let profiles = [
-  {
-    id: "pablo",
-    name: "Pablo Gonzalez",
-    avatar: "/data/avatars/avatar.jpeg",
-    favorites: ["God of War Ragnarok", "The Last of Us Part 2", "Metal Gear Solid: Peace Walker"]
-  },
-  {
-    id: "bryson",
-    name: "Bryson",
-    avatar: "dummyimgdata",
-    favorites: ["Ghost of Tsushima", "Gran Turismo 7", "Super Mario Wonder"]
-  },
-  {
-    id: "danako",
-    name: "Danako",
-    avatar: "moredummydata",
-    favorites: ["Uncharted 4", "Helldivers 2", "Spider-Man 2"]
-  }
-];

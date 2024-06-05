@@ -1,0 +1,15 @@
+.content {
+    display: flex;
+    padding: var(--size-spacing-large);
+    align-items: center;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+}
+
+.left h2 {
+    width: max-content;
+    text-align: center;
+}
