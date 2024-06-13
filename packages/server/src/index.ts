@@ -11,6 +11,7 @@ import fs from "node:fs/promises";
 const app = express();
 const port = process.env.PORT || 3000;
 const staticDir = process.env.STATIC || "public";
+console.log("Serving static files from ", staticDir);
 
 app.use(express.static(staticDir));
 
@@ -20,7 +21,6 @@ const nodeModules = path.resolve(
 );
 console.log("Serving NPM packages from", nodeModules);
 
-console.log("Serving NPM packages from", nodeModules);
 app.use("/node_modules", express.static(nodeModules));
 
 app.use(express.json());
