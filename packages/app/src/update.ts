@@ -58,7 +58,7 @@ function loadProfile(
     },
     user: Auth.User
 ) {
-    return fetch(`api/profiles/${msg.userid}`, {
+    return fetch(`/api/profiles/${msg.userid}`, {
         headers: {
             "Content-Type": "application/json",
             ...Auth.headers(user)

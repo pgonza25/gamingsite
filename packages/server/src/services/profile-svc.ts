@@ -7,7 +7,7 @@ const ProfileSchema = new Schema<Profile>(
         id: { type: String, required: true, trim: true },
         name: { type: String, required: true, trim: true },
         avatar: String,
-        games: Array<Game>,
+        games: [{ type: Schema.Types.ObjectId, ref: "Game"}],
         friends: Array<String>
     },
     { collection: "user-profiles" }
@@ -22,7 +22,9 @@ function index(): Promise<Profile[]> {
 function get(id: String): Promise<Profile> {
     return ProfileModel.find({ id })
     .then((list) => list[0])
+    .then((profile) => profile.populate("games"))
     .catch((err) => {
+        console.log("Error in GET", err);
         throw `${id} Not Found`;
     });
 }

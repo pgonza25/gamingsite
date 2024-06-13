@@ -10,22 +10,37 @@
     <link rel="stylesheet" href="/styles/token.css">
     <link rel="stylesheet" href="/styles/page.css">
     <link rel="stylesheet" href="styles/index.css">
-    <script type="importmap">
-        {
-            "imports": {
-                "@calpoly/mustang": "/node_modules/@calpoly/mustang/dist/mustang.mjs"
-            }
-        }
-    </script>
     <script type="module">
-        //import { define, Auth } from "@calpoly/mustang";
+        import { define, Auth } from "@calpoly/mustang";
+        import { LoginFormElement } from "/src/components/login-form";
 
-        //define({ "mu-auth": Auth.Provider });
+        define({
+            "mu-auth": Auth.Provider,
+            "login-form": LoginFormElement
+        });
     </script>
-    <script type="module" src="/js/login-form.js"></script>
+    <script type="module" src="./src/login-form.js"></script>
     <title>Joystick Journal - Login</title>
+    <style>
+        .page {
+            height: 100vh;
+            grid-template-rows: 1fr fit-content(1fr) 1fr;
+        }
+        main.card {
+            align-self: center;
+            grid-column: 3 / span 4;
+        }
+        h2 {
+            grid-column: 2 / -2;
+            align-self: end;
+        }
+        p {
+            grid-column: 2 / -2;
+            text-align: center;
+        }
+    </style>
 </head>
-<body>
+<body class="page">
     <mu-auth>
         <h2>User Login</h2>
         <main class="card">

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/token.css">
+    <link rel="stylesheet" href="/styles/page.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <script type="module">
+        import { define, Auth } from "@calpoly/mustang";
+        import { SignupFormElement } from "/src/components/signup-form";
+
+        define({
+            "mu-auth": Auth.Provider,
+            "signup-form": SignupFormElement
+        });
+    </script>
+
+</head>
+<body class="page">
+    <mu-auth>
+        <h2>New User Registration</h2>
+        <main class="card">
+            <signup-form>
+                <label>
+                    <span>Username:</span>
+                    <input name="username" autocomplete="off" />
+                </label>
+                <label>
+                    <span>Password:</span>
+                    <input type="password" name="password" />
+                </label>
+            </signup-form>
+        </main>
+        <p>
+            Already have an account and want to 
+            <a href="./login.html">Log In</a>
+            instead?
+        </p>
+    </mu-auth>
+</body>
+</html>

@@ -5,6 +5,7 @@ import { connect } from "./services/mongo";
 import auth, { authenticateUser } from "./routes/auth";
 import exp from "constants";
 import path from "path";
+import fs from "node:fs/promises";
 
 
 const app = express();
@@ -29,6 +30,13 @@ app.use("/auth", auth);
 
 app.get("/hello", (req: Request, res: Response) => {
     res.send("Hello, World");
+});
+
+app.use("/app", (req: Request, res: Response) => {
+    const indexHtml = path.resolve(staticDir, "index.html");
+    fs.readFile(indexHtml, { encoding: "utf8" }).then((html) =>
+        res.send(html)
+    );
 });
 
 app.listen(port, () => {

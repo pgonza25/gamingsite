@@ -196,7 +196,7 @@ export class ProfileViewElement extends View<Model, Msg> {
             oldValue !== newValue &&
             newValue
         ) {
-            console.log("Profiler Page:", newValue);
+            console.log("Profile Page:", newValue);
             this.dispatchMessage([
                 "profile/select",
                 { userid: newValue }
@@ -216,7 +216,9 @@ export class ProfileViewElement extends View<Model, Msg> {
         const games_html = games.map(
             (s) =>
                 html`
-                    <li>${s.title}</li>
+                    <li class="game"><dl><dt>Title: ${s.name}</dt>
+                                <dd>Platform: ${s.platform}</dd>
+                                <dd>Rating: ${s.rating}</dd></dl></li>
                 `
         );
 
@@ -235,4 +237,14 @@ export class ProfileViewElement extends View<Model, Msg> {
             </profile-viewer>
         `;
     }
+
+    static styles = css`
+        ul {
+            display: grid;
+            flex-direction: column;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-gap: 50px;
+        }
+    `;
 }

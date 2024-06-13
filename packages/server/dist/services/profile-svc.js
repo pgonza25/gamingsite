@@ -27,7 +27,7 @@ const ProfileSchema = new import_mongoose.Schema(
     id: { type: String, required: true, trim: true },
     name: { type: String, required: true, trim: true },
     avatar: String,
-    games: Array,
+    games: [{ type: import_mongoose.Schema.Types.ObjectId, ref: "Game" }],
     friends: Array
   },
   { collection: "user-profiles" }
@@ -37,7 +37,8 @@ function index() {
   return ProfileModel.find();
 }
 function get(id) {
-  return ProfileModel.find({ id }).then((list) => list[0]).catch((err) => {
+  return ProfileModel.find({ id }).then((list) => list[0]).then((profile) => profile.populate("games")).catch((err) => {
+    console.log("Error in GET", err);
     throw `${id} Not Found`;
   });
 }

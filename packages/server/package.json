@@ -9,7 +9,9 @@
     }
   },
   "scripts": {
+    "start:api": "cross-env STATIC=./public npm run start",
     "start:app": "cross-env STATIC=../app/dist npm run start",
+    "start:node": "node dist/index.js",
     "start:proto": "cross-env STATIC=../proto/public npm run start",
     "dev": "cross-env STATIC=../proto/public npx nodemon",
     "build": "npx etsc",
