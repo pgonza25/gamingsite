@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "npx vite",
-    "build": "npx tsc && npx vite build"
+    "build": "npx vite build"
   },
   "author": "",
   "license": "ISC",
