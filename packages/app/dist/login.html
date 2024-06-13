@@ -10,16 +10,6 @@
     <link rel="stylesheet" href="/styles/token.css">
     <link rel="stylesheet" href="/styles/page.css">
     <link rel="stylesheet" href="styles/index.css">
-    <script type="module">
-        import { define, Auth } from "@calpoly/mustang";
-        import { LoginFormElement } from "/src/components/login-form";
-
-        define({
-            "mu-auth": Auth.Provider,
-            "login-form": LoginFormElement
-        });
-    </script>
-    <script type="module" src="./src/components/login-form.ts"></script>
     <title>Joystick Journal - Login</title>
     <style>
         .page {
@@ -39,6 +29,8 @@
             text-align: center;
         }
     </style>
+  <script type="module" crossorigin src="/assets/login-8bDlMTrW.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/lit-element-gNrLorcj.js">
 </head>
 <body class="page">
     <mu-auth>

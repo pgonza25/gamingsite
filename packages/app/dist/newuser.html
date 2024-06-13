@@ -10,23 +10,30 @@
     <link rel="stylesheet" href="/styles/token.css">
     <link rel="stylesheet" href="/styles/page.css">
     <link rel="stylesheet" href="styles/index.css">
-  <script type="module" crossorigin src="/assets/spa-KaZcRVXK.js"></script>
+
+  <script type="module" crossorigin src="/assets/signup-u8mcnHzP.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/lit-element-gNrLorcj.js">
 </head>
-<body>
-    <mu-history provides="joystick:history">
-        <mu-auth provides="joystick:auth" redirect="./login.html">
-            <mu-store provides="joystick:model">
-                <joystick-header></joystick-header>
-                <h2>Welcome to Joystick Journal!</h2>
-                <p>Maintain lists of games you've played, are currently playing,
-                    and look forward to playing. Leave ratings on games so you 
-                    can remember what you thought of them.
-                </p>
-                <a href="/app/games/pablo">View Your Journal</a>
-                <mu-switch></mu-switch>
-            </mu-store>
-        </mu-auth>
-    </mu-history>
+<body class="page">
+    <mu-auth>
+        <h2>New User Registration</h2>
+        <main class="card">
+            <signup-form>
+                <label>
+                    <span>Username:</span>
+                    <input name="username" autocomplete="off" />
+                </label>
+                <label>
+                    <span>Password:</span>
+                    <input type="password" name="password" />
+                </label>
+            </signup-form>
+        </main>
+        <p>
+            Already have an account and want to 
+            <a href="./login.html">Log In</a>
+            instead?
+        </p>
+    </mu-auth>
 </body>
 </html>
